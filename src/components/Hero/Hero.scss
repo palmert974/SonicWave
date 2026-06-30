@@ -2,29 +2,38 @@
 @use '../../styles/variables' as *;
 
 h1 {
-    font-family: 'Bruno Ace';
-    color: $dark-blue;
-    font-size: 3rem;
-    text-align: center;
+  font-family: 'Bruno Ace';
+  color: $dark-blue;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .article-hero {
-    background-image: url(../../assets/images/tropical-island-vector-26726621.png);
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 110vh;
-    background-color: $dark-blue;
+  background-image: url(../../assets/images/tropical-island-vector-26726621.png);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  height: auto;
+  padding: 2rem 1rem;
+  background-color: $dark-blue;
 
-    &__div {
-        background-color: white;
-        padding: 1rem;
-        border-radius: 50%;
-        height: 45vh;
-        margin: 1rem;
-        display: flex;
-        align-items: center;
-    }
+  &__div {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 50%;
+    width: min(55vw, 280px);
+    height: min(55vw, 280px);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  }
 }
