@@ -1,7 +1,7 @@
-import './App.scss';
-import Hero from './components/Hero/Hero';
-import Game from './pages/Game';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
+import Hero from "./components/Hero/Hero";
+import Game from "./pages/Game";
+import "./App.scss";
 
 
 function App() {
