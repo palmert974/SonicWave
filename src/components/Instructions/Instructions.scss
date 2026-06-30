@@ -1,30 +1,60 @@
 @use '../../styles/variables' as *;
 
 h2 {
-    text-align: center;
-    color: white;
-    font-family: 'Bruno Ace';
+  text-align: center;
+  color: white;
+  font-family: 'Bruno Ace';
+  font-size: 1.8rem;
+  padding: 1.5rem 1rem 0.5rem;
 }
 
 .instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark-blue;
+  padding: 1rem 1rem 3rem;
+  gap: 0.5rem;
+
+  &__all {
     display: flex;
     flex-direction: column;
-    background-color: $dark-blue;
+    width: 100%;
+    max-width: 500px;
+  }
 
-    &__all {
-        display: flex;
-        flex-direction: column;
+  &__individual {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: $dark-blue;
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+    margin-top: 1.5rem;
+  }
+
+  button {
+    padding: 0.9rem 3rem;
+    background-color: $turquoise;
+    color: $dark-blue;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Bruno Ace';
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.2s ease;
+    letter-spacing: 0.05em;
+
+    &:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
     }
-
-    &__individual {
-        background-color: white;
-        border-radius: 10px;
-        padding: 1rem;
-        text-align: center;
-        margin: 1rem;
-    }
-}
-
-button {
-    padding: 1rem;
+  }
 }
