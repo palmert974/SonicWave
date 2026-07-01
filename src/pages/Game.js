@@ -2,8 +2,11 @@ import axios from "axios";
 import { useState, useEffect, useRef, useCallback } from "react";
 import "./Game.scss";
 
+// Proxied through our own /api/tracks (see api/tracks.js) instead of
+// calling itunes.apple.com directly from the browser, which was
+// intermittently blocked by inconsistent CORS headers from Apple's CDN.
 const ITUNES_API_URL =
-  "https://itunes.apple.com/search?term=hip-hop+pop+rnb&media=music&entity=song&limit=50";
+  "/api/tracks?term=hip-hop+pop+rnb&media=music&entity=song&limit=50";
 
 const PLAY_DURATION_MS = 5000;
 
