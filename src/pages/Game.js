@@ -27,8 +27,9 @@ function Game() {
   const audioRef = useRef(null);
   const timerRef = useRef(null);
 
-  // Fetch tracks on mount
-  useEffect(() => {
+  const loadTracks = useCallback(() => {
+    setIsLoading(true);
+    setError(null);
     axios
       .get(ITUNES_API_URL)
       .then((response) => {
@@ -44,6 +45,11 @@ function Game() {
         setIsLoading(false);
       });
   }, []);
+
+  // Fetch tracks on mount
+  useEffect(() => {
+    loadTracks();
+  }, [loadTracks]);
 
   // Play 5-second preview when currentTrack changes
   const playPreview = useCallback(() => {
@@ -105,6 +111,9 @@ function Game() {
     return (
       <section className="game">
         <p className="game__error">{error}</p>
+        <button className="game__btn" onClick={loadTracks}>
+          Try Again
+        </button>
       </section>
     );
   }
